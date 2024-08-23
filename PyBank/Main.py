@@ -149,7 +149,7 @@ results = [
 ]
 
 # Export results to a text file
-with open('PyBank Analysis.txt', 'w') as file:
+with open('Analysis/PyBank Analysis.txt', 'w') as file:
     for line in results:
         file.write(line + '\n')
 
