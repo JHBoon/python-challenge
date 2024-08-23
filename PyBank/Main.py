@@ -16,7 +16,7 @@ print("Financial Analysis")
 print("----------------------------")
 
 # Open the CSV file
-with open('budget_data.csv', 'r') as file:  
+with open('Resources/budget_data.csv', 'r') as file:
     total_rows_date_column = 0
     total_months = set()
     
