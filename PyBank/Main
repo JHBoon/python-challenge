@@ -1,0 +1,89 @@
+print("Financial Analysis")
+print()
+print("----------------------------")
+
+
+
+# Write header and deviding line
+print()
+print("Financial Analysis")
+print()
+print("----------------------------") 
+
+
+# Import, read and open file with total months
+import os
+
+import csv
+csvpath = os.path.join ("/Users/surjunk/Documents/JUST PrIve/JUST USA/Class work Berkeley Extention Data Analytics Bootcamp/Weekly Challenges/week_3_challenge _python/week_3_challenge_python/Starter_Code/PyBank/Resources/budget_data.csv")
+
+with open (csvpath) as csvfile:
+
+    csvreader = csv.reader(csvfile,delimiter=",")
+    for row in csvreader:
+# print file just to test and check content. Deactivated with #
+        # print(row)
+        
+#calculate total rows in the months collumn
+
+        row_count = 0
+
+with open(csvpath,"r") as file:
+    csv_reader = csv.reader(file)
+    for row in csv_reader:
+        row_count+=1
+    print("Total Months: ",row_count)
+    print()
+#create variables for the total months
+#create variables for the total profit
+#Create variables for the total loss
+
+# calculate net amount profit/loss : sum column A (-header)
+    total_b = 0
+    with open(csvpath,"r") as file:
+        csv_reader = csv.reader(file)
+        header = next(csv_reader)
+        column_b_index = header.index('Profit/Losses')
+
+        for row in csv_reader:
+            total_b += int(row[column_b_index])
+
+    print("Total", total_b)
+    print()
+
+# Calculate changes in "Profit/Losses" = Column B - Column A / total months
+
+import csv
+csvpath = os.path.join ("/Users/surjunk/Documents/JUST PrIve/JUST USA/Class work Berkeley Extention Data Analytics Bootcamp/Weekly Challenges/week_3_challenge _python/week_3_challenge_python/Starter_Code/PyBank/Resources/budget_data.csv")
+
+
+# Read the data from a CSV file
+dates = []
+profits = []
+
+with open('data.csv', 'r') as file:
+    reader = csv.reader(file)
+    next(reader)  # Skip header row if there is one
+    for row in reader:
+        dates.append(row[0])
+        profits.append(float(row[1]))
+
+# Calculate the greatest increase in profits
+max_increase = 0
+max_increase_date = ""
+
+for i in range(1, len(profits)):
+    increase = profits[i] - profits[i - 1]
+    if increase > max_increase:
+        max_increase = increase
+        max_increase_date = dates[i]
+
+print(f"The greatest increase in profits was on {max_increase_date} with an amount of {max_increase}.")
+
+
+# Average changes profit/loss =  Changes Profit/losses / Total months. Or use average function
+
+#The greatest increase in profits (date and amount) over the entire period = step 1 calculate change per mont: Month 2 Month 1 and copy outcome to new column:"value change". Step 2 find highest value in the new collumn.
+
+#The greatest decrease in profits (date and amount) over the entire period: similar to increase but looking for lowest value in "Value change"
+
